@@ -1,10 +1,13 @@
 apply plugin: 'maven-publish'
 
+group = PUBLISH_GROUP_ID
+version = PUBLISH_VERSION
+
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.release
+                from components.findByName('release')
 
                 groupId PUBLISH_GROUP_ID
                 artifactId PUBLISH_ARTIFACT_ID
