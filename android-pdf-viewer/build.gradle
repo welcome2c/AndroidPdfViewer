@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.github.barteksc.pdfviewer'
     compileSdkVersion rootProject.tools.compileSdk
 
     defaultConfig {
@@ -10,16 +11,23 @@ android {
         versionName "${rootProject.tools.versionName}"
     }
 
+    ndkVersion "28.0.12433566"
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
 }
 
 dependencies {
     implementation 'androidx.core:core:1.7.0'
-    api 'com.github.mhiew:pdfium-android:1.9.2'
+    api 'io.github.oothp:pdfium-android:1.9.5-beta01'
 }
 
 // Maven Publishing
 ext {
-    PUBLISH_GROUP_ID = 'com.github.mhiew'
+    PUBLISH_GROUP_ID = 'com.github.welcome2c'
     PUBLISH_VERSION = "${rootProject.tools.versionName}"
     PUBLISH_ARTIFACT_ID = 'android-pdf-viewer'
 }
