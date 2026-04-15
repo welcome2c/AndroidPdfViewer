@@ -28,7 +28,7 @@ dependencies {
 // Maven Publishing
 ext {
     PUBLISH_GROUP_ID = 'com.github.welcome2c'
-    PUBLISH_VERSION = rootProject.version != 'unspecified' ? rootProject.version : "${rootProject.tools.versionName}"
+    PUBLISH_VERSION = "${rootProject.tools.versionName}"
     PUBLISH_ARTIFACT_ID = 'android-pdf-viewer'
 }
 
